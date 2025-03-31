@@ -1,0 +1,73 @@
+
+---
+old_sign_language_model is the old CNN model that is not very good
+signlanguagemodel is the new model that is very good on A, C and E and mostly D
+sign_language_model is the newer model (created 0402022 in the free period in the random room in the corridor that isn't really a room) that is very very good for A, and C
+theModel is the newest model (created in period 5 of 0402022) - CURRENTLY THE DATA IN notAugmented and trainOnThese is the data that is being used for this model, the main difference being no augmented data for B and D to take into account their vertical nature. This will be moved to the dataFor040225 folder once the model has been generated
+---
+
+
+--- future things : data structures : trees
+As a potential future enhancement, using a tree data structure can be explored to support the formation of cohesive words from individual gestures. A trie (prefix tree) could be employed here, where each node represents a letter or character, and paths form sequences of letters corresponding to valid words in the system’s vocabulary.
+
+For example, each node in the tree could store a letter, and the traversal from root to leaf nodes would represent a series of recognized gestures, ultimately forming a word. This could be further optimized with the use of a search algorithm (such as depth-first search (DFS) or breadth-first search (BFS)) to traverse the tree and determine valid words or phrases as users sign.
+
+
+       (root)
+      /  |  \
+     A   B   C  
+    / \   \   \
+   P   R   A   A
+  /     \   \   \
+ L       E   T   R
+  \       \   \   \
+  E       D   S   T
+
+
+  i.e for the word APPLE you can go LLLR from the root
+---
+
+Directory For This Project
+ 
+├── dataCollection.py
+├── dataAugmentation.py
+├── model.py
+├── train.py
+├── app.py
+├── notes.txt
+├── CNNModels
+    └── sign_language_model.h5
+    └── sign_language_model.keras
+    └── signlanguagemodel.h5
+    └── signlanguagemodel.keras
+├── extraFiles
+    └── dataStructures.py
+    └── oldApp.py
+    └── saveAsh5.py
+    └── utils.py
+├── filesForTesting
+    └── confusionMatrix.py
+└── savedData
+    └── dataFor040225Model
+    └── dataForSign_language_model
+    └── notAugmented
+        └── A
+        └── B
+        └── C
+        └── D
+        └── E
+    └── trainOnThese
+        └── evaluation
+            └── A
+            └── B
+            └── C
+            └── D
+            └── E
+        └── train
+            └── A
+            └── B
+            └── C
+            └── D
+            └── E
+
+
